@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+:root {
+	--blanco: #fff;
+	--negro: #000;
+	--starbucks: #017143;
+	font-size: 16px;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	text-decoration: none;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	scroll-behavior: smooth;
+	font-family: 'Poppins', sans-serif;
+}
+
+body {
+	min-height: 100vh;
+	position: relative;
+}
+
+.wrap {
+	max-width: 1200px;
+	width: 100%;
+	padding: 0 10px;
+	margin: auto;
+}
+
+.header {
+	width: 100%;
+	height: 100px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.header .logo {
+	width: 80px;
+	height: 80px;
+}
+
+.header .logo img {
+	width: 100%;
+	height: 100%;
+}
+
+.header .navigation ul {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+}
+
+.header .navigation ul li a {
+	font-size: 1rem;
+	padding: 0.6rem 1.25rem;
+	color: var(--blanco);
+	color: var(--negro);
+}
+
+.header span {
+	display: none;
+}
+
+.content {
+	width: 100%;
+	min-height: calc(100vh - 100px);
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.content .textBox {
+	max-width: 600px;
+}
+
+.content .textBox h2 {
+	font-size: clamp(3rem, 5vmin, 4rem);
+	font-weight: 400;
+	margin-bottom: 1.8rem;
+}
+
+.content .textBox h2 span {
+	color: var(--starbucks);
+	font-weight: 900;
+	font-size: clamp(3.2rem, 5vmin, 4.2rem);
+}
+
+.content .textBox a {
+	display: inline-block;
+	padding: 0.5rem 2rem;
+	background-color: var(--starbucks);
+	color: var(--blanco);
+	border-radius: 50px;
+	font-weight: 600;
+	letter-spacing: 1px;
+	margin: 2rem 0;
+}
+
+.content .imgBox {
+	width: auto;
+	height: auto;
+	display: flex;
+	justify-content: flex-end;
+	position: relative;
+	/* z-index: 3; */
+	overflow: hidden;
+}
+.content .imgBox img {
+	width: clamp(260px, 40vmin, 400px);
+}
+
+.thumb {
+	position: absolute;
+	bottom: 2rem;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	gap: 4rem;
+}
+
+.thumb li img {
+	width: 80px;
+	cursor: pointer;
+}
+
+.circle {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: var(--starbucks);
+	clip-path: circle(166px at center);
+	z-index: -1;
+}
+
+@media screen and (max-width: 1099px) {
+	.content {
+		justify-content: center;
+		padding: 50px 0;
+	}
+
+	.thumb {
+		transform: translate(-50%, 107px);
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.header .navigation {
+		display: none;
+	}
+
+	.header .logo {
+		width: 50px;
+		height: 50px;
+	}
+
+	.header span {
+		display: block;
+	}
+
+	.circle {
+		clip-path: circle(120px at center);
+	}
+}
+
+@media screen and (max-width: 375px) {
+	.thumb {
+		gap: 20px;
+	}
+}
